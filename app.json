@@ -1,0 +1,17 @@
+{
+  "pages":[
+    "pages/index/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#2798EB",
+    "navigationBarTitleText": "开四停四限行通知",
+    "navigationBarTextStyle":"white"
+  },
+  "plugins": {
+    "calendar": {
+      "version": "1.1.0",
+      "provider": "wx92c68dae5a8bb046"
+    }
+  }
+}

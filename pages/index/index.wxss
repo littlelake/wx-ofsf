@@ -1,0 +1,115 @@
+/**index.wxss**/
+.wrap {
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f1f1;
+}
+
+.header {
+  width: 100%;
+  height: 300rpx;
+  background-color: #09f; 
+  color: #fff;
+  text-align: center;
+}
+
+.header .title {
+  display: block;
+  font-size: 50rpx;
+  font-style: italic;
+  padding: 40rpx 0;
+}
+
+.header .info {
+  display: block;
+  font-size: 28rpx;
+}
+
+.calendar {
+  width: 90%;
+  background: #fff;
+  margin-left: 5%;
+}
+
+.calendar-wrap {
+  width: 90%;
+  height: 700rpx;
+  margin-left: 5%;
+  margin-top: -90rpx;
+  margin-bottom: 10rpx;
+  text-align: center;
+  background: #fff;
+}
+
+.calendar-wrap .calendar-title {
+  display: inline-block;
+  font-size: 30rpx;
+  color: #ccc;
+  margin: 30rpx 0;
+}
+
+.calendar-exp {
+  display: flex;
+}
+
+.exp-left {
+  flex: 1;
+  padding: 20rpx;
+}
+
+.exp-list {
+
+}
+
+.exp-list .exp-item {
+  font-size: 28rpx;
+  margin-right: 20rpx;
+}
+
+.exp-list .exp-item:last-child {
+  margin-right: 0;
+}
+
+.exp-list .exp-item .icon {
+  display: inline-block;
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;  
+}
+
+.icon-success {
+  background-color: #449d44;
+}
+
+.icon-error {
+  background-color: #d9534f;
+}
+
+.icon-warning {
+  background-color: #f0ad4e;
+}
+
+.exp-right {
+  width: 200rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary-border-btn {
+  border: 1rpx solid #09f;
+  color: #09f;
+}
+
+.swiper-title {
+  font-size: 30rpx;
+  color: #999;
+  margin-left: 5%;
+  padding: 20rpx 0;
+}
+
+.swiper-content {
+  margin-left: 5%;
+  margin-bottom: 100rpx;
+}
