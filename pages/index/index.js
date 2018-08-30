@@ -20,6 +20,7 @@ Page({
     let days_style = that.data.days_style;
     if (!days_style.length) {
       days_style.push({ month: 'current', day: cur_day, color: 'white', background: '#f5a8f0' });
+      days_style.push({ month: 'current', day: cur_day + 4, color: 'white', background: '#d9534f' });
     } else {
       let flag = true; let cur_index = 0;
       days_style.forEach(function (item, index) {
@@ -30,10 +31,26 @@ Page({
         }
       });
 
-      flag ? days_style.push({ month: 'current', day: cur_day, color: 'white', background: '#f5a8f0' }) :
-        days_style.splice(cur_index, 1);
+      if (!!flag) {
+        days_style.push({ month: 'current', day: cur_day, color: 'white', background: '#f5a8f0' });
+        days_style.push({ month: 'current', day: cur_day + 4, color: 'white', background: '#d9534f' });
+      } else {
+        let nextFlag = false;
+        // 判断当前按钮的颜色，如果是绿色，则颜色由绿变为透明颜色，
+        // 如果颜色为停止颜色，那么当前按钮颜色变为违法的黄色
+        // 如果点击违法，那么颜色由黄色变为停止颜色
+        days_style.forEach(function (cell, idx) {
+          if (cell.day === cur_day && cell.background === '#f5a8f0') {
+            days_style.splice(cur_index, 1);
+            days_style.splice(cur_index + 4, 1);
+          }
+        });
+      }
+      // flag ? days_style.push({ month: 'current', day: cur_day, color: 'white', background: '#f5a8f0' }) :
+      //   days_style.splice(cur_index, 1);
     }
-    // 如果当前点击的元素为已经选择了的，则恢复到初始状态
+
+
 
     this.setData({ days_style });
   },

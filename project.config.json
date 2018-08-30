@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.6.0",
 	"appid": "wx991971ce64d542dc",
-	"projectname": "OFSF",
+	"projectname": "wx-ofsf",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
