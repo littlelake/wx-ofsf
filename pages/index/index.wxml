@@ -33,12 +33,12 @@
       <view class='weui-cell__bd'>出行智能提醒</view>
       <text class='weui-cell__ft'></text>
     </view>
-    <view class='weui-cell '>
+    <!-- <view class='weui-cell '>
       <view class='weui-cell__bd'>出行违章怎么办？</view>
       <view class='weui-cell__ft'>
         <button class='primary-border-btn' size='mini'>立刻办理</button>
       </view>
-    </view>
+    </view> -->
   </view>
   <view class='swiper-title'>管理措施和范围图解</view>
   <swiper class='swiper-content' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
@@ -48,4 +48,8 @@
       </swiper-item>
     </block>
   </swiper>
+  <view class='q-normal' bindtap='goQuestion'>
+    <image src="{{qIcon}}" class='q-normal-icon'></image>
+    常见问题
+  </view>
 </view>

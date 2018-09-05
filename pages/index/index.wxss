@@ -111,5 +111,20 @@
 
 .swiper-content {
   margin-left: 5%;
-  margin-bottom: 100rpx;
+  margin-bottom: 30rpx;
+}
+
+.q-normal {
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50rpx;
+}
+
+.q-normal-icon {
+  width: 40rpx;
+  height: 40rpx;
+  color: #ccc;
+  padding-right: 10rpx;
 }

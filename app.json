@@ -1,12 +1,13 @@
 {
-  "pages":[
-    "pages/index/index"
+  "pages": [
+    "pages/index/index",
+    "pages/question/question"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#2798EB",
     "navigationBarTitleText": "开四停四限行通知",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
   "plugins": {
     "calendar": {

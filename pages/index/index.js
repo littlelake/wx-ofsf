@@ -10,6 +10,8 @@ Page({
     interval: 5000,
     duration: 1000,
     days_style: [],
+    // 常见问题icon
+    qIcon: '../../assets/icons/question.svg'
   },
   dayClick: function (event) {
     var that = this;
@@ -58,6 +60,12 @@ Page({
   reset: function () {
     this.setData({
       days_style: []
+    })
+  },
+  // 跳转至常见问题
+  goQuestion: function() {
+    wx.navigateTo({
+      url: 'pages/question/question',
     })
   }
 });
