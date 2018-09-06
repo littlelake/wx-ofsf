@@ -65,7 +65,13 @@ Page({
   // 跳转至常见问题
   goQuestion: function() {
     wx.navigateTo({
-      url: 'pages/question/question',
-    })
+      url: '../question/question',
+    });
+  },
+  //跳转到智能出行页面
+  goIntelligent: function() {
+    wx.navigateTo({
+      url: '../intelligent/intelligent',
+    });
   }
 });

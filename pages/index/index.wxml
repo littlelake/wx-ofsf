@@ -29,7 +29,7 @@
     </view>
   </view>
   <view class='calendar weui-cells'>
-    <view class='weui-cell weui-cell_access'>
+    <view class='weui-cell weui-cell_access' bindtap='goIntelligent'>
       <view class='weui-cell__bd'>出行智能提醒</view>
       <text class='weui-cell__ft'></text>
     </view>

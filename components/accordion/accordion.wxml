@@ -1,0 +1,12 @@
+<!--components/accordion/accordion.wxml-->
+<view class='accordion-wrap'>
+  <view class="{{status ? 'accordion-title border-bottom' : 'accordion-title'}}" bindtap='toggle'>
+    <view class='accordion-txt'>{{title}}</view>
+    <view class='arrow-down'>
+      <image class='icon' src="{{status ? downIcon : upIcon}}"></image>
+    </view>
+  </view>
+  <view class='accordion-content' style="display: {{status ? 'none' : 'block'}}">
+    <slot></slot>
+  </view>
+</view>

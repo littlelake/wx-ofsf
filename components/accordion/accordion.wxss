@@ -1,0 +1,40 @@
+/* components/accordion/accordion.wxss */
+
+.accordion-wrap {
+}
+
+.accordion-wrap .accordion-title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 100rpx;
+  margin: 0 30rpx;
+  padding: 10rpx 0;
+}
+
+.border-bottom {
+  border-bottom: 1rpx solid #ddd;
+}
+
+.accordion-title .accordion-txt {
+  font-size: 30rpx;
+  color: #333;
+  flex: 1;
+}
+
+.accordion-title .arrow-down {
+  position: relative;
+  width: 100rpx;
+}
+
+.arrow-down .icon, .arrow-up .icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.accordion-wrap .accordion-content {
+  background: #f1f1f1;
+  padding: 20rpx 30rpx;
+  font-size: 26rpx;
+  color: #999;
+}

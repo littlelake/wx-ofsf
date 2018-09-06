@@ -1,1 +1,6 @@
-{}
+{
+  "navigationBarTitleText": "常见问题",
+  "usingComponents": {
+    "component-accordion": "../../components/accordion/accordion"
+  }
+}
