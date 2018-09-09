@@ -14,11 +14,11 @@ Page({
     qIcon: '../../assets/icons/question.svg'
   },
   dayClick: function (event) {
-    var that = this;
+    const that = this;
     // 当前日期
-    var cur_day = event.detail.day;
+    const cur_day = event.detail.day;
     // 当前月份
-    var cur_month = event.detail.month;
+    const cur_month = event.detail.month + '';
     let days_style = that.data.days_style;
     if (!days_style.length) {
       days_style.push({ month: 'current', day: cur_day, color: 'white', background: '#f5a8f0' });
@@ -63,13 +63,13 @@ Page({
     })
   },
   // 跳转至常见问题
-  goQuestion: function() {
+  goQuestion: function () {
     wx.navigateTo({
       url: '../question/question',
     });
   },
   //跳转到智能出行页面
-  goIntelligent: function() {
+  goIntelligent: function () {
     wx.navigateTo({
       url: '../intelligent/intelligent',
     });
