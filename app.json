@@ -6,8 +6,8 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#2798EB",
-    "navigationBarTitleText": "开四停四限行通知",
+    "navigationBarBackgroundColor": "#37758a",
+    "navigationBarTitleText": "广州开四停四小助手",
     "navigationBarTextStyle": "white"
   },
   "plugins": {
@@ -15,5 +15,42 @@
       "version": "1.1.3",
       "provider": "wx92c68dae5a8bb046"
     }
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "white",
+    "list": [
+      {
+        "iconPath": "./assets/icons/tag.png",
+        "selectedIconPath": "./assets/icons/tag_active.png",
+        "pagePath": "pages/index/index",
+        "text": "行程记录"
+      },
+      {
+        "iconPath": "./assets/icons/cal.png",
+        "selectedIconPath": "./assets/icons/cal_active.png",
+        "pagePath": "pages/index/index",
+        "text": "行程计算"
+      },
+      {
+        "iconPath": "./assets/icons/position.png",
+        "selectedIconPath": "./assets/icons/position_active.png",
+        "pagePath": "pages/index/index",
+        "text": "管控区域"
+      },
+      {
+        "iconPath": "./assets/icons/question.png",
+        "selectedIconPath": "./assets/icons/question_active.png",
+        "pagePath": "pages/question/question",
+        "text": "常见问题"
+      },
+      {
+        "iconPath": "./assets/icons/car.png",
+        "selectedIconPath": "./assets/icons/car_active.png",
+        "pagePath": "pages/index/index",
+        "text": "我的车辆"
+      }
+    ]
   }
 }
