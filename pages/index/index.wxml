@@ -1,25 +1,23 @@
 <view class='wrap'>
+  <image class="wrap-bg" src='../../assets/images/bg.jpg'></image>
   <view class='calendar calendar-wrap'>
-    <calendar calendar-style="calendar" binddayClick="dayClick" days-color="{{days_style}}" weeks-type="cn" />
+    <calendar calendar-style="calendar" header-style="calendar-header" binddayClick="dayClick" days-color="{{days_style}}" weeks-type="cn" show-more-days="true" />
   </view>
   <view class='calendar calendar-exp'>
     <view class='exp-list'>
       <text class='exp-item'>
-          <text class='icon icon-success'></text>
+        <text class='icon icon-success'></text>
       <text class='text'>正常行驶</text>
       </text>
       <text class='exp-item'>
-          <text class='icon icon-error'></text>
+        <text class='icon icon-error'></text>
       <text class='text'>停止行驶</text>
       </text>
       <text class='exp-item'>
-          <text class='icon icon-warning'></text>
+        <text class='icon icon-warning'></text>
       <text class='text'>违法行驶</text>
       </text>
     </view>
-    <!-- <view class='exp-right'>
-      <button class='primary-border-btn' size='mini' bindtap='reset'>重置</button>
-    </view> -->
   </view>
   <view class='calendar-reset'>
     <view class='reset-info'>
