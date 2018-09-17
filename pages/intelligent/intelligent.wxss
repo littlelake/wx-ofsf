@@ -1,1 +1,92 @@
 /* pages/intelligent/intelligent.wxss */
+
+page {
+  background: #f1f1f1;
+}
+
+.section {
+  background: #fff;
+  margin-bottom: 10rpx;
+  padding: 15px;
+}
+
+.section  .section_title {
+  padding: 20rpx 0;
+  font-size: 17px;
+}
+
+.section_dl {
+  display: flex;
+  margin-bottom: 20rpx;
+}
+
+.section_dl .section_dl_left {
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  background: #f0f0f0;
+  text-align: center;
+  margin-left: 20rpx;
+}
+
+.section_dl .section_dl_right {
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  background: #c1e5e5;
+  text-align: center;
+  margin: 0 20rpx 0 40rpx;
+}
+
+.section_link {
+  margin-top: 50rpx;
+  margin-bottom: 20rpx;
+  display: block;
+  font-size: 26rpx;
+  color: #8a8a8a;
+  text-align: center;
+}
+
+.section_link .icon {
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+  margin-top: -8rpx;
+}
+
+.weui-panel__bd {
+  display: flex;
+}
+
+.weui-panel__bd .weui-media-box_text {
+  flex: 1;
+}
+
+.weui-panel__bd .weui-cell__ft {
+  display: flex;
+  width: 160rpx;
+  align-items: center;
+  justify-content: center;
+  text-align: right;
+}
+
+.weui-media-box__desc {
+  display: flex;
+}
+
+.weui-media-box__desc  .desc-text {
+  flex: 1;
+}
+
+.weui-media-box__desc  .desc-btn {
+  width: 170rpx;
+  text-align: center;
+}
+
+.weui-media-box__desc  .desc-btn .primary-btn {
+  background: #cfe7eb;
+  border-color: #cfe7eb;
+  color: #333;
+}

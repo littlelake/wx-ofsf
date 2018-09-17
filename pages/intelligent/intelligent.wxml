@@ -1,2 +1,46 @@
 <!--pages/intelligent/intelligent.wxml-->
-<text>智能出行页面</text>
+<view class="section">
+  <view class="section_title">我的出行状态</view>
+  <view class="section_dl">
+    <view class="section_dl_left">今天</view>
+    <view class="section_dl_right">可行驶</view>
+  </view>
+  <view class="section_dl">
+    <view class="section_dl_left">明天</view>
+    <view class="section_dl_right">可行驶</view>
+  </view>
+  <view class="section_link">忘记记录出行
+    <image class='icon' src="./right_arrow.svg"></image>
+  </view>
+</view>
+
+<view class="weui-panel weui-panel_access">
+  <view class="weui-panel__bd">
+    <view class="weui-media-box weui-media-box_text">
+      <view class="weui-media-box__title weui-media-box__title_in-text">开启提醒</view>
+      <view class="weui-media-box__desc">根据你当前的出行记录，接下来可正常行驶</view>
+    </view>
+    <view class="weui-cell__ft">
+      <switch checked />
+    </view>
+  </view>
+  <view class="weui-panel__ft">
+    <view class="weui-cell weui-cell_access">
+      <view class="weui-media-box__desc">请及时更新出行记录,已获得下一次通知</view>
+    </view>
+  </view>
+</view>
+
+<view class="weui-panel weui-panel_access">
+  <view class="weui-panel__bd">
+    <view class="weui-media-box weui-media-box_text">
+      <view class="weui-media-box__title weui-media-box__title_in-text">今日行驶打卡</view>
+      <view class="weui-media-box__desc">
+        <view class="desc-text">若当天已行驶入限行区域，请及时打卡已获得准确的消息通知，若未驶入请忽略。</view>
+        <view class="desc-btn">
+          <button class='primary-btn' size='mini'>打卡</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

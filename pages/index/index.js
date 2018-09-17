@@ -1,14 +1,5 @@
 Page({
   data: {
-    imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-    ],
-    indicatorDots: true,
-    autoplay: true,
-    interval: 5000,
-    duration: 1000,
     days_style: [],
   },
   dayClick: function (e) {
@@ -33,14 +24,16 @@ Page({
       days_style.push({ month: 'current', day: cur_day, color: 'white', background: '#0ca42c' });
 
       // 判断days_style中是否有当前点击按钮后四位的数
-      let initFlag = false;
+      let initFlag = false, initIndex = -1;
       days_style.forEach((item, index) => {
         if ((cur_day + 4) === item.day && (item.background === '#0ca42c' || item.background === '#0ca42c!important')) {
           initFlag = true;
+          initIndex = index;
         }
       });
       if (!!initFlag) {
-        days_style.push({ month: 'current', day: cur_day + 4, color: 'white', background: '#aaaaaa' });
+        // days_style.push({ month: 'current', day: cur_day + 4, color: 'white', background: '#aaaaaa' });
+        days_style.splice(initIndex, 1, { month: 'current', day: cur_day + 4, color: 'white', background: '#aaaaaa' });
       } else {
         days_style.push({ month: 'current', day: cur_day + 4, color: 'white', background: '#e25462' });
       }
@@ -54,57 +47,66 @@ Page({
           // if (!!this.findIsExist(days_style, cur_day + 4).flag) {
           //   days_style.splice(this.findIsExist(days_style, cur_day + 4).index, 1);
           // }
-          // 这里需要判断一下其后第四位是停止行驶还是违法行驶，如果是停止行驶则直接显示为默认状态，如果是违法行驶则显示为正常行驶
-          days_style.forEach((SItem, SIndex) => {
-            if (SItem.day === cur_day + 4) {
-              console.log(SItem);
-              if (SItem.background === '#e25462' || SItem.background === '#e25462!important') {
-                // 后第四位为停止行驶
-                days_style.splice(SIndex, 1);
-              } else if (SItem.background === '#aaaaaa' || SItem.background === '#aaaaaa!important') {
-                // 后第四位为违法行驶
-                days_style.splice(SIndex, 1, { month: 'current', day: cur_day, color: 'white', background: '#0ca42c' });
-              }
-            }
-          });
+        }
+      });
+      // 这里需要判断一下其后第四位是停止行驶还是违法行驶，如果是停止行驶则直接显示为默认状态，如果是违法行驶则需要根据违法的后四位来判断是正常行驶还是停止行驶
+      days_style.forEach((SItem, SIndex) => {
+        if (SItem.day === cur_day + 4) {
+          if (SItem.background === '#e25462' || SItem.background === '#e25462!important') {
+            // 后第四位为停止行驶
+            days_style.splice(SIndex, 1);
+          } else if (SItem.background === '#aaaaaa' || SItem.background === '#aaaaaa!important') {
+            // 后第四位为违法行驶
+            days_style.splice(SIndex, 1, { month: 'current', day: cur_day + 4, color: 'white', background: '#0ca42c' });
+          }
         }
       });
       // days_style.push({ month: 'current', day: cur_day, color: '#fff', background: '#0ca42c' });
+    } else if (current_item.background === '#e25462' || current_item.background === '#e25462!important') {
+      // 状态为停止
+      days_style.forEach((TItem, TIndex) => {
+        if (TItem.day === cur_day) {
+          days_style.splice(TIndex, 1, { month: 'current', day: cur_day, color: 'white', background: '#aaaaaa' });
+        }
+      });
+      let AFlag = false;
+      days_style.forEach((AItem, AIndex) => {
+        if (AItem.day === cur_day + 4) {
+          AFlag = true;
+        }
+      });
+      if (!AFlag) {
+        days_style.push({ month: 'current', day: cur_day + 4, color: 'white', background: '#e25462' });
+      } else {
+        let nextFourDays = [];
+        days_style.forEach((BItem, BIndex) => {
+          for (let i = cur_day + 4; i < cur_day + 8; i++) {
+            if (BItem.day === i && (BItem.background === '#0ca42c' || BItem.background === '#0ca42c!important')) {
+              nextFourDays.push(i);
+              days_style.splice(BIndex, 1, { month: 'current', day: i, color: 'white', background: '#aaaaaa' });
+            }
+          }
+        });
+        for (let j = cur_day + 4; j < cur_day + 8; j++) {
+          if (!nextFourDays.includes(j)) {
+            days_style.push({ month: 'current', day: j, color: 'white', background: '#e25462' });
+          }
+        }
+      }
+    } else if (current_item.background === '#aaaaaa' || current_item.background === '#aaaaaa!important') {
+      // 当前为违法行驶
+      days_style.forEach((DItem, DIndex) => {
+        if (DItem.day === cur_day) {
+          days_style.splice(DIndex, 1, { month: 'current', day: cur_day, color: 'white', background: '#e25462' });
+        }
+      });
+      days_style.forEach((EItem, EIndex) => {
+        // 如果其第四个为停止行驶，则去掉
+        if (EItem.day === cur_day + 4 && (EItem.background === '#e25462' || EItem.background === '#e25462!important')) {
+          days_style.splice(EIndex, 1);
+        }
+      });
     }
-
-    // if (!days_style.length) {
-    //   days_style.push({ month: 'current', day: cur_day, color: '#e6782b', background: '#9dd6d7' });
-    //   days_style.push({ month: 'current', day: cur_day + 4, color: 'white', background: '#d9534f' });
-    // } else {
-    //   let flag = true; let cur_index = 0;
-    //   days_style.forEach(function (item, index) {
-    //     if (item.day === cur_day && item.color === 'white') {
-    //       // days_style.splice(index, 1);
-    //       cur_index = index;
-    //       flag = flag && false;
-    //     }
-    //   });
-
-    //   if (!!flag) {
-    //     days_style.push({ month: 'current', day: cur_day, color: '#e6782b', background: '#9dd6d7' });
-    //     days_style.push({ month: 'current', day: cur_day + 4, color: 'white', background: '#d9534f' });
-    //   } else {
-    //     let nextFlag = false;
-    //     // 判断当前按钮的颜色，如果是绿色，则颜色由绿变为透明颜色，
-    //     // 如果颜色为停止颜色，那么当前按钮颜色变为违法的黄色
-    //     // 如果点击违法，那么颜色由黄色变为停止颜色
-    //     days_style.forEach(function (cell, idx) {
-    //       if (cell.day === cur_day && cell.background === '#f5a8f0') {
-    //         days_style.splice(cur_index, 1);
-    //         days_style.splice(cur_index + 4, 1);
-    //       }
-    //     });
-    //   }
-    //   // flag ? days_style.push({ month: 'current', day: cur_day, color: 'white', background: '#f5a8f0' }) :
-    //   //   days_style.splice(cur_index, 1);
-    // }
-
-
 
     this.setData({ days_style });
   },

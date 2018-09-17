@@ -30,6 +30,8 @@
 .arrow-down .icon, .arrow-up .icon {
   width: 40rpx;
   height: 40rpx;
+  background: #cfe7eb;
+  border-radius: 50%;
 }
 
 .accordion-wrap .accordion-content {

@@ -1,0 +1,9 @@
+<!--pages/position/position.wxml-->
+<view class='swiper-title'>管理措施和范围图解</view>
+<swiper class='swiper-content' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item style="height: 320rpx;">
+      <image src="{{item}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>

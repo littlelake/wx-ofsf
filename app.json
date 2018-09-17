@@ -1,8 +1,10 @@
 {
   "pages": [
+    "pages/intelligent/intelligent",
+    "pages/position/position",
     "pages/index/index",
     "pages/question/question",
-    "pages/intelligent/intelligent"
+    "pages/car/car"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -24,7 +26,7 @@
       {
         "iconPath": "./assets/icons/tag.png",
         "selectedIconPath": "./assets/icons/tag.png",
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/intelligent/intelligent",
         "text": "行程记录"
       },
       {
@@ -36,7 +38,7 @@
       {
         "iconPath": "./assets/icons/position.png",
         "selectedIconPath": "./assets/icons/position.png",
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/position/position",
         "text": "管控区域"
       },
       {
@@ -48,7 +50,7 @@
       {
         "iconPath": "./assets/icons/car.png",
         "selectedIconPath": "./assets/icons/car.png",
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/car/car",
         "text": "我的车辆"
       }
     ]
